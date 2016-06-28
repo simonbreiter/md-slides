@@ -6,6 +6,7 @@
       <link rel="stylesheet" type="text/css" media="screen, projection, print" href="assets/stylesheets/slidy.css" />
       <link rel="stylesheet" type="text/css" media="screen" href="assets/stylesheets/style.css" />
       <link rel="stylesheet" type="text/css" media="screen, print" href="assets/stylesheets/twitter_bootstrap.css" />
+      <link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.4.0/styles/github.min.css">
       <script src="assets/javascripts/showdown/showdown.js"></script>
       <script src="assets/javascripts/showdown/extensions/table.js"></script>
       <script src="assets/javascripts/slidy.js"></script>
@@ -132,12 +133,10 @@ $x^2 + y^2 = z^2$
         document.write('<div class=slide>' + slides[j] + '</div>');
       });
       $(".presentation").remove();
-      // if you want to syntax highlight *all* your code in the same way
-      // then you can uncomment and customize the next line
-      //
-      //$("pre>code").parent().addClass("syntax cpp");
       w3c_slidy.add_listener(document.body, "touchend", w3c_slidy.mouse_button_click);
-      $.syntax();
+      $('pre code').each(function(i, block) {
+          hljs.highlightBlock(block);
+      });
 
       // automatic detection for theme javascript so that it can run after
       // slides have been generated
