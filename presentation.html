@@ -11,6 +11,12 @@
       <script src="assets/javascripts/slidy.js"></script>
       <script src="assets/javascripts/jquery-syntax/jquery-1.4.4.min.js"></script>
       <script src="assets/javascripts/jquery-syntax/jquery.syntax.min.js"></script>
+      <script type="text/x-mathjax-config">
+         MathJax.Hub.Config({tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}});
+      </script>
+      <script type="text/javascript" async
+              src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_CHTML">
+      </script>
 
       <meta name="duration" content="45" />
 
@@ -92,6 +98,21 @@ $('pre &gt; code').parent().addClass("syntax cpp");
 </pre>
 
 ---
+# LaTeX support
+
+* LaTeX is supported through [MathJax](https://www.mathjax.org)
+* simply put your equations between two single dollar-sign delimiter
+
+## Examples
+
+$\frac{2}{3}$
+
+$\frac{n!}{k!(n-k)!} = {n \choose k}$
+
+$x^2 + y^2 = z^2$
+
+---
+
 # extendability
 
 * p_slides supports theming
