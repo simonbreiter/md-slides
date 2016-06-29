@@ -8,8 +8,7 @@
       <link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.4.0/styles/github.min.css">
       <link rel="stylesheet" type="text/css" media="screen" href="assets/stylesheets/style.css" />
       <link href='https://fonts.googleapis.com/css?family=Lato' rel='stylesheet' type='text/css'>
-      <script src="assets/javascripts/showdown/showdown.js"></script>
-      <script src="assets/javascripts/showdown/extensions/table.js"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/remarkable/1.6.2/remarkable.min.js"></script>
       <script src="assets/javascripts/slidy.js"></script>
       <script src="https://code.jquery.com/jquery-3.0.0.min.js" integrity="sha256-JmvOoLtYsmqlsWxa7mDSLMwa6dZ9rrIdtrrVYRnDRH0=" crossorigin="anonymous"></script>
 
@@ -127,11 +126,12 @@ $x^2 + y^2 = z^2$
 
     <script>
       $(".presentation").each(function() {
-        var markup = new Showdown.converter({ extensions: ['table'] }).
-                     makeHtml($(this).html());
-        var slides = markup.split('<hr />');
-        for (var j = 0; j < slides.length; j++)
-        document.write('<div class=slide>' + slides[j] + '</div>');
+        var md = new Remarkable('full');
+        var markup = md.render($(this).html());
+        var slides = markup.split('<hr>');
+        for (var j = 0; j < slides.length; j++) {
+            document.write('<div class=slide>' + slides[j] + '</div>');
+        }
       });
       $(".presentation").remove();
       w3c_slidy.add_listener(document.body, "touchend", w3c_slidy.mouse_button_click);
