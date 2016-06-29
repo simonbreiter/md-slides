@@ -142,7 +142,7 @@ $x^2 + y^2 = z^2$
       // automatic detection for theme javascript so that it can run after
       // slides have been generated
       for(i in document.styleSheets) {
-        stylesheet = document.styleSheets[i].href
+        stylesheet = document.styleSheets[i].href;
         if (stylesheet && stylesheet.indexOf("theme") != -1) {
           theme = stylesheet.slice(stylesheet.lastIndexOf("/")+1, stylesheet.length);
           eval(theme.replace(".css", "()"));
