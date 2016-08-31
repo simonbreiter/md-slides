@@ -42,13 +42,6 @@ void bar(void) {
 ```
 </pre>
 
-## becomes
-```c
-static int foo;
-void bar(void) {
-    foo = 0;
-    while (foo != 255) ; }
-```
 
 ---
 # LaTeX support
@@ -64,13 +57,6 @@ $\frac{n!}{k!(n-k)!} = {n \choose k}$
 $x^2 + y^2 = z^2$
 </pre>
 
-## becomes
-
-$\frac{2}{3}$
-
-$\frac{n!}{k!(n-k)!} = {n \choose k}$
-
-$x^2 + y^2 = z^2$
 
 ---
 
@@ -86,10 +72,3 @@ Tables are possible
 | git status   | git status     | git status    |
 | git diff     | git diff       | git diff      |
 </pre>
-
-## becomes
-
-| Left-aligned | Center-aligned | Right-aligned |
-| :---         |     :---:      |          ---: |
-| git status   | git status     | git status    |
-| git diff     | git diff       | git diff      |
