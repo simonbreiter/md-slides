@@ -3,7 +3,6 @@ dead simple way to create semantic, nice to look at slides
 
   * forget about styling, only think about content
     * write markdown (using [remarkable](https://github.com/jonschlinkert/remarkable))
-    * slides are automatically styled nicely (uses [twitter bootstrap](http://twitter.github.com/bootstrap/))
     * code samples are syntactically highlighted (uses [highlightjs](https://highlightjs.org))
     * generates nice slides in the browser (uses [slidy.js](http://www.w3.org/Talks/Tools/Slidy2/))
       * use arrow keys to navigate
